@@ -1,13 +1,85 @@
-body {
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.container {
+  width: 500px;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.input_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 1.5rem;
+  color: #e1e1e1;
+  font-weight: bold;
+}
+.input_wrapper input, .input_wrapper select{
+  width: 100%;
+  background-color: #e1e1e1;
+  border-radius: .5rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5em 1rem;
+}
+.input_wrapper label{
+  margin-bottom: .5rem;
+}
+.input_wrapper input::placeholder {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.input_wrapper_checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.input_wrapper_checkbox input{
+  width: auto;
+}
+.input_wrapper_checkbox label{
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+.error {
+  position: absolute;
+  right: 105%;
+  bottom: 0;
+  white-space: nowrap;
+  color: rgb(177, 73, 73);
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
